@@ -1,0 +1,33 @@
+{
+  "name": "chatbot-poc-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "core-js": "^3.26.0",
+    "babel-eslint": "^10.1.0",
+    "keycloak-js": "^20.0.1",
+    "moment": "^2.29.4",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0",
+    "vuetify": "^3.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-plugin-vuex": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/compiler-sfc": "^3.2.45",
+    "eslint": "^8.28.0",
+    "eslint-plugin-vue": "^9.8.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0"
+  }
+}

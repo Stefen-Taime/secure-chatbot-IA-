@@ -1,0 +1,181 @@
+{
+  "realm": "assursante",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "agent_standard",
+        "description": "Agent de service client standard"
+      },
+      {
+        "name": "agent_senior",
+        "description": "Agent de service client senior avec accès étendu"
+      },
+      {
+        "name": "superviseur",
+        "description": "Superviseur d'équipe avec accès complet"
+      }
+    ],
+    "client": {
+      "chatbot-client": [
+        {
+          "name": "view_client_data",
+          "description": "Peut consulter les données clients"
+        },
+        {
+          "name": "view_claims",
+          "description": "Peut consulter les réclamations"
+        },
+        {
+          "name": "create_tickets",
+          "description": "Peut créer des tickets"
+        },
+        {
+          "name": "send_emails",
+          "description": "Peut envoyer des emails"
+        },
+        {
+          "name": "modify_claims",
+          "description": "Peut modifier les réclamations"
+        }
+      ]
+    }
+  },
+  "clients": [
+    {
+      "clientId": "chatbot-client",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "chatbot-client-secret",
+      "redirectUris": [
+  "http://localhost:8080/*",
+  "http://localhost/*",
+  "http://localhost:80/*"
+],
+      "webOrigins": [
+        "+"
+      ],
+      "protocol": "openid-connect",
+      "attributes": {
+        "access.token.lifespan": "900",
+        "refresh.token.lifespan": "1800"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "agent1",
+      "enabled": true,
+      "firstName": "Jean",
+      "lastName": "Dupont",
+      "email": "jean.dupont@assursante.example",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "agent1_password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "agent_standard"
+      ],
+      "clientRoles": {
+        "chatbot-client": [
+          "view_client_data",
+          "view_claims",
+          "create_tickets",
+          "send_emails"
+        ]
+      },
+      "requiredActions": [
+        "CONFIGURE_TOTP"
+      ]
+    },
+    {
+      "username": "agent2",
+      "enabled": true,
+      "firstName": "Marie",
+      "lastName": "Martin",
+      "email": "marie.martin@assursante.example",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "agent2_password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "agent_senior"
+      ],
+      "clientRoles": {
+        "chatbot-client": [
+          "view_client_data",
+          "view_claims",
+          "create_tickets",
+          "send_emails",
+          "modify_claims"
+        ]
+      },
+      "requiredActions": [
+        "CONFIGURE_TOTP"
+      ]
+    },
+    {
+      "username": "superviseur1",
+      "enabled": true,
+      "firstName": "Philippe",
+      "lastName": "Dubois",
+      "email": "philippe.dubois@assursante.example",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "superviseur1_password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "superviseur"
+      ],
+      "clientRoles": {
+        "chatbot-client": [
+          "view_client_data",
+          "view_claims",
+          "create_tickets",
+          "send_emails",
+          "modify_claims"
+        ]
+      },
+      "requiredActions": [
+        "CONFIGURE_TOTP"
+      ]
+    }
+  ],
+  "browserFlow": "browser",
+  "browserSecurityHeaders": {
+    "contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+    "xContentTypeOptions": "nosniff",
+    "xRobotsTag": "none",
+    "xFrameOptions": "SAMEORIGIN",
+    "contentSecurityPolicyReportOnly": "",
+    "xXSSProtection": "1; mode=block",
+    "strictTransportSecurity": "max-age=31536000; includeSubDomains"
+  },
+  "smtpServer": {},
+  "eventsEnabled": true,
+  "eventsListeners": [
+    "jboss-logging"
+  ],
+  "enabledEventTypes": [
+    "LOGIN",
+    "LOGIN_ERROR",
+    "LOGOUT",
+    "LOGOUT_ERROR"
+  ],
+  "adminEventsEnabled": true,
+  "adminEventsDetailsEnabled": true
+}

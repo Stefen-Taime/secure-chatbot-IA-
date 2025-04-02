@@ -1,0 +1,61 @@
+# ------------------------------------------------------
+#  OS / Editor
+# ------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# ------------------------------------------------------
+#  Node / Vue
+# ------------------------------------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+dist/
+# Ignore environment variables, secrets
+.env
+.env.*
+
+# ------------------------------------------------------
+#  Python
+# ------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# If using virtual environments:
+venv/
+env/
+.venv/
+.mcpenv/
+
+# ------------------------------------------------------
+#  Logs / Temp
+# ------------------------------------------------------
+*.log
+*.temp
+*.pid
+*.seed
+*.bak
+
+# ------------------------------------------------------
+#  Docker
+# ------------------------------------------------------
+docker-volume/
+*.tar
+docker-compose.override.yml
+# If you have any auto-generated Dockerfiles or build artifacts:
+# Dockerfile.*

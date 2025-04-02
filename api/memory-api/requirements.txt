@@ -1,0 +1,8 @@
+fastapi==0.95.1
+uvicorn==0.22.0
+pydantic==1.10.7
+python-jose==3.3.0
+python-multipart==0.0.6
+httpx==0.24.0
+redis==4.5.5
+hvac==1.1.0
